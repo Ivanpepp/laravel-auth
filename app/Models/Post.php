@@ -11,5 +11,8 @@ class Post extends Model
     public function getFormattedDAte($column, $format = 'd-m-Y H:i')
     {
         return Carbon::create($this->$column)->format($format);
+
+        
     }
+    protected $fillable = ['title','author','content','date','url'] ;
 }

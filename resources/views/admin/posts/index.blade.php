@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row ">
-       
+       <a href="{{route('admin.posts.create')}}" class="btn btn-primary">Crea un nuovo post</a>
                    <table class="table">
                        <thead>
                         <th>Titolo:</th>

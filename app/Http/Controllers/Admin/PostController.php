@@ -38,6 +38,7 @@ class PostController extends Controller
     public function create()
     {
         //
+        return view('admin.posts.create');
     }
 
     /**
@@ -49,6 +50,11 @@ class PostController extends Controller
     public function store(Request $request)
     {
         //
+        $data = $request->all();
+        $post = Post::create($data);
+        $post->save();
+
+        return redirect()->route('admin.posts.show', $post);
     }
 
     /**
@@ -68,9 +74,10 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Post $post)
     {
         //
+        return view('admin.posts.edit', compact('post'));
     }
 
     /**
@@ -80,9 +87,12 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Post $post)
     {
         //
+        $data = $request->all();
+        $post->update($data);
+        return redirect()->route('admin.posts.show', compact('post'));
     }
 
     /**
