@@ -9,9 +9,12 @@
                 
                 <div class="card-body" id="show-card-body">
                   <img class="img-fluid shadow" src="{{$post->url}}" alt="{{$post->title}}">
-                  <h1>{{$post->title}}</h1>
-                  <p>{{$post->content}}</p>
-                  <address><strong>Autore:</strong> {{$post->author}}</address>
+                  <h1 class="mb-4">{{$post->title}}</h1>
+                  <p> {{$post->content}}</p>
+                  <div class="d-flex mt-5">
+                    <address><strong>Autore:</strong> {{$post->author}}</address>
+                    <span class="mx-4"><strong> Aggiunto il:</strong> {{$post->getFormattedDate('date')}}</span>
+                  </div>
                 </div>
             </div>
         </div>

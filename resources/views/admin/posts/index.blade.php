@@ -15,7 +15,7 @@
                          <tr>
                              <td><a href="{{route('admin.posts.show', $post)}}">{{ $post->title }}</a></td>
                              <td>{{ $post->author }}</td>
-                             <td></td>
+                             <td>{{$post->getFormattedDate('date')}}</td>
                          </tr>
                             
                         @empty
