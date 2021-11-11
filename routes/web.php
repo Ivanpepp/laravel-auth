@@ -14,8 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('guests.home');
 });
+Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 
@@ -26,8 +27,8 @@ Route::middleware('auth')
     ->group(function(){
             //tutte le rotte che iniziano con il prefisso ""
             Route::get('/', 'HomeController@index')->name('home'); 
-            Route::resource('posts', 'PostController@index'); 
+            Route::resource('posts', 'PostController'); 
     });
     
 
-Route::get('/home', 'HomeController@index')->name('home');
+

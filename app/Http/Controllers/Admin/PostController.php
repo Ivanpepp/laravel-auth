@@ -17,6 +17,8 @@ class PostController extends Controller
     {
         $this->middleware('auth');
     }
+
+
     /**
      * Display a listing of the resource.
      *
@@ -24,7 +26,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        $posts = Post::all();
+        return view('admin.posts.index', compact('posts'));
     }
 
     /**
@@ -54,9 +57,9 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Post $post)
     {
-        //
+        return view('admin.posts.show', $post);
     }
 
     /**
