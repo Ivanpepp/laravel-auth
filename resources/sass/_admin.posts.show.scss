@@ -1,0 +1,18 @@
+.card-header{
+    justify-content: space-between;
+    line-height: 40px;
+    display: flex;
+    a{
+        align-self: center;
+    }
+    
+}
+
+#show-card-body{
+    img{
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+        margin: 20px 0;
+    }
+}
